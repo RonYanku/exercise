@@ -1,3 +1,4 @@
+import { UtilsServiceService } from './../../services/utils-service.service';
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -11,6 +12,9 @@ export class PresentFirstNameComponent {
 
   @Input() firstName: string;
 
-  constructor() { }
+  constructor(private UtilsServiceService: UtilsServiceService) { }
 
+  get reverseString() {
+    return this.UtilsServiceService.reverseString(this.firstName);
+  }
 }

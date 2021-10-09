@@ -1,6 +1,6 @@
 import { UtilsServiceService } from './services/utils-service.service';
 import { HttpServiceService } from './services/http-service.service';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ToastService } from 'ng-uikit-pro-standard';
 
@@ -8,7 +8,6 @@ import { ToastService } from 'ng-uikit-pro-standard';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   title = 'paperless-assignment';
@@ -32,7 +31,7 @@ export class AppComponent {
     return this.validatingForm.get('firstName');
   }
   get reversedFirstNameInput() {
-    return this.UtilsServiceService.reverseString(this.firstNameInput.value);
+    return (this.firstNameInput.value);
   }
   get emailInput() {
     return this.validatingForm.get('email');

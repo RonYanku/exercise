@@ -8,7 +8,6 @@ export class UtilsServiceService {
   constructor() { }
 
   public reverseString(str: string) {
-    console.log('here')
     return str?.split('').reverse().join('');
   }
 }
