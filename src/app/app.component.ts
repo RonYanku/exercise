@@ -16,7 +16,6 @@ export class AppComponent {
 
   constructor(
     private httpService: HttpServiceService,
-    private UtilsServiceService: UtilsServiceService,
     private toastrService: ToastService
   ) {}
 
@@ -49,6 +48,7 @@ export class AppComponent {
         },
         (error) => {
           this.toastrService.error(error.statusText);
+          this.disabledSubmitButton = false;
         }
       );
   }

@@ -14,6 +14,7 @@ export class PresentFirstNameComponent {
 
   constructor(private UtilsServiceService: UtilsServiceService) { }
 
+  /* */
   get reverseString() {
     return this.UtilsServiceService.reverseString(this.firstName);
   }
