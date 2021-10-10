@@ -1,19 +1,18 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { UtilsServiceService } from '../../services/utils-service.service'
+import { UtilsService } from '../../services/utils.service';
 
 @Component({
   selector: 'present-reverse-first-name',
   templateUrl: './present-reverse-first-name.component.html',
-  styleUrls: ['./present-reverse-first-name.component.scss']
+  styleUrls: ['./present-reverse-first-name.component.scss'],
 })
 export class PresentReverseFirstNameComponent {
-
   @Input() firstName: string;
 
-  constructor(private UtilsServiceService: UtilsServiceService) { }
+  constructor(private UtilsService: UtilsService) {}
 
-  /* */
+  // reverse the string we got as input using UtilsService function
   get reverseString() {
-    return this.UtilsServiceService.reverseString(this.firstName);
+    return this.UtilsService.reverseString(this.firstName);
   }
 }

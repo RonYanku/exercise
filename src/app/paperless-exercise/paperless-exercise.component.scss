@@ -20,11 +20,27 @@
 
 .login-form {
   width: 100%;
-
 }
 
 .main-container {
   width: 50%;
-  // height: 90vh;
   border: 2px solid #007e33;
+}
+
+.main {
+  height: 100vh;
+}
+
+.asterik {
+  color: red;
+}
+
+.submit-button {
+  background-color: #007e33;
+  color: white;
+  width: 25%;
+}
+
+.button-wrapper {
+  margin: 0 auto;
 }

@@ -1,14 +1,14 @@
-<div
-  class="d-flex justify-content-center align-items-center"
-  style="height: 100vh"
->
-  <div class="container-fluid main-container" style="width: 50%">
+<div class="d-flex justify-content-center align-items-center main">
+  <div class="container-fluid main-container">
+    <!-- form start -->
     <form
       [formGroup]="validatingForm"
       (ngSubmit)="onSubmit()"
       class="text-center border border-light login-form"
     >
       <p class="h4 mb-4 pt-2">Paperless Assignment</p>
+
+      <!-- first name form-control -->
       <div class="md-form md-outline">
         <input
           mdbInput
@@ -18,16 +18,18 @@
           class="form-control mb-4"
           formControlName="firstName"
         />
-        <label for="firstName">First name<span style="color: red">*</span></label>
+        <label for="firstName">First name <span class="asterik">*</span></label>
       </div>
 
       <div class="warn">
-      <mdb-error
-        class="form-field"
-        *ngIf="firstNameInput?.errors?.required && firstNameInput?.touched"
-        >First name required</mdb-error>
+        <mdb-error
+          class="form-field"
+          *ngIf="firstNameInput?.errors?.required && firstNameInput?.touched"
+          >First name required</mdb-error
+        >
       </div>
 
+      <!-- email form control -->
       <div class="md-form md-outline">
         <input
           mdbInput
@@ -37,39 +39,42 @@
           class="form-control mb-4"
           formControlName="email"
         />
-        <label for="email">Email <span style="color: red">*</span></label>
+        <label for="email">Email <span class="asterik">*</span></label>
       </div>
 
       <div class="warn">
-
         <mdb-error
-        class="form-field"
-        *ngIf="emailInput?.errors?.required && emailInput?.touched"
-        >Email required</mdb-error>
+          class="form-field"
+          *ngIf="emailInput?.errors?.required && emailInput?.touched"
+          >Email required</mdb-error
+        >
         <mdb-error
-        class="form-field"
-        *ngIf="emailInput?.errors?.email && emailInput?.touched"
-        >Must be a valid email address</mdb-error>
+          class="form-field"
+          *ngIf="emailInput?.errors?.email && emailInput?.touched"
+          >Must be a valid email address</mdb-error
+        >
       </div>
 
       <!-- Submit button -->
-      <button
-        mdbBtn
-        style="background-color: #007e33; color: white; width: 25%;"
-        block="true"
-        class="my-4"
-        type="submit"
-        [disabled]="disabledSubmitButton || validatingForm.invalid"
-      >
-        Send
-      </button>
+      <div class="button-wrapper">
+        <button
+          mdbBtn
+          block="true"
+          class="my-4 submit-button"
+          type="submit"
+          [disabled]="disabledSubmitButton || validatingForm.invalid"
+        >
+          Send
+        </button>
+      </div>
 
+      <!-- present first name in reverse order through sub component -->
       <div class="reverse-first-name">
-      <present-reverse-first-name [firstName]="reversedFirstNameInput"></present-reverse-first-name>
-
-    </div>
+        <present-reverse-first-name
+          [firstName]="firstNameInput.value"
+        ></present-reverse-first-name>
+      </div>
     </form>
+    <!-- form end -->
   </div>
-
-
 </div>

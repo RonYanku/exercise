@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class UtilsServiceService {
+export class UtilsService {
+  constructor() {}
 
-  constructor() { }
-
+  // reverse a string
   public reverseString(str: string) {
     return str?.split('').reverse().join('');
   }
