@@ -1,4 +1,4 @@
-import { UtilsServiceService } from './../../services/utils-service.service';
+import { UtilsServiceService } from '../../paperless-exercise/services/utils-service.service';
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
