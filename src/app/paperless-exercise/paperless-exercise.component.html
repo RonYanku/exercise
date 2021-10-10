@@ -3,7 +3,6 @@
   style="height: 100vh"
 >
   <div class="container-fluid main-container" style="width: 50%">
-    <!-- <div class="row h-100"> -->
     <form
       [formGroup]="validatingForm"
       (ngSubmit)="onSubmit()"
@@ -65,11 +64,9 @@
         Send
       </button>
 
-      <!-- </div> -->
       <div class="reverse-first-name">
-      <!-- <present-first-name
-      [firstName]="reversedFirstNameInput"
-    ></present-first-name> -->
+      <present-reverse-first-name [firstName]="reversedFirstNameInput"></present-reverse-first-name>
+
     </div>
     </form>
   </div>
