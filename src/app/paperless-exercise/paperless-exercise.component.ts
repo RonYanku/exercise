@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ToastService } from 'ng-uikit-pro-standard';
-import { HttpServiceService } from './services/http-service.service';
+import { UserService } from './services/user-service';
 
 @Component({
   selector: 'app-paperless-exercise',
@@ -13,7 +13,7 @@ export class PaperlessExerciseComponent implements OnInit {
     disabledSubmitButton: boolean = false;
 
     constructor(
-      private httpService: HttpServiceService,
+      private userService: UserService,
       private toastrService: ToastService
     ) {}
 
@@ -36,7 +36,7 @@ export class PaperlessExerciseComponent implements OnInit {
 
     onSubmit() {
       this.disabledSubmitButton = true;
-      this.httpService
+      this.userService
         .login(this.firstNameInput.value, this.emailInput.value)
         .subscribe(
           (res) => {

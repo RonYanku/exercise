@@ -9,7 +9,7 @@ interface UserData {
 @Injectable({
   providedIn: 'root'
 })
-export class HttpServiceService {
+export class UserService {
 
 url: string = 'http://httpbin.org';
 
